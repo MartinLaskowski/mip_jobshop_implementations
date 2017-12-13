@@ -1,0 +1,28 @@
+reset;
+
+model js-wagner.mod;
+data js-wagner.dat;
+
+option solver cplex;
+option sorver_msg 0;
+
+option cplex_option 'lpdisplay = 1 mipdisplay = 2 mipgap = 0.000001';
+
+option gutter_width 1;
+
+option display_eps 1e-5;
+
+option omit_zero_rows 0;
+
+option omit_zero_cols 0;
+
+#problem js-classico;
+
+solve;
+
+display d;
+display s;
+display s0;
+display cmax;
+
+end;
